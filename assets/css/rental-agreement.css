@@ -1,0 +1,93 @@
+/* ============================================================
+   RENTAL AGREEMENT MODAL
+   ============================================================ */
+
+.ra-backdrop{
+  display:none;position:fixed;inset:0;z-index:200000;
+  background:rgba(6,30,42,0.7);align-items:center;justify-content:center;padding:20px;
+}
+.ra-backdrop.open{display:flex;}
+
+.ra-modal{
+  background:#fff;border-radius:12px;max-width:660px;width:100%;
+  max-height:88vh;display:flex;flex-direction:column;
+  box-shadow:0 30px 80px rgba(0,0,0,0.4);font-family:'Poppins',sans-serif;
+}
+.ra-modal-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 26px;border-bottom:1px solid #EDEAE1;flex-shrink:0;
+}
+.ra-modal-header h2{font-family:'Playfair Display',serif;font-size:21px;color:#0B3D54;margin:0;}
+.ra-close{background:none;border:none;font-size:26px;line-height:1;color:#55606B;cursor:pointer;padding:0 4px;}
+.ra-close:hover{color:#0B3D54;}
+
+.ra-modal-body{padding:22px 26px 26px;overflow-y:auto;}
+
+.ra-gate-notice{
+  background:#FCF3E3;border:1px solid #EBD9AE;color:#8A6416;
+  padding:12px 16px;border-radius:6px;font-size:13px;margin-bottom:18px;
+}
+
+.ra-terms{
+  background:#F9F7F2;border-radius:8px;padding:18px 20px;margin-bottom:22px;
+  max-height:260px;overflow-y:auto;font-size:13px;color:#3F4A52;line-height:1.6;
+}
+.ra-terms h4{font-size:13.5px;color:#0B3D54;margin:14px 0 6px;font-family:'Poppins',sans-serif;}
+.ra-terms h4:first-child{margin-top:0;}
+.ra-terms p{margin-bottom:8px;}
+.ra-disclaimer{font-style:italic;color:#77828A;font-size:12px;margin-top:14px;}
+
+.ra-requirements-list{margin:16px 0;}
+.ra-req-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #F0EEE6;}
+.ra-req-item:last-child{border-bottom:none;}
+.ra-req-item i{color:var(--gold, #C9973E);font-size:20px;margin-top:2px;flex-shrink:0;width:22px;text-align:center;}
+.ra-req-item strong{display:block;color:#0B3D54;font-size:14px;margin-bottom:3px;}
+.ra-req-item p{margin:0;font-size:13px;color:#3F4A52;}
+
+.ra-intro{font-size:13px;color:#3F4A52;margin:14px 0 6px;font-weight:600;}
+.ra-company-block{background:#F0F6F8;border-left:3px solid #0B3D54;padding:10px 14px;font-size:13px;color:#0B3D54;margin-bottom:6px;}
+
+.ra-terms ul{margin:6px 0 10px 20px;}
+.ra-terms li{margin-bottom:6px;}
+
+.ra-upload-block{background:#F9F7F2;border-radius:8px;padding:18px 20px;margin:18px 0;}
+.ra-upload-block h4{font-size:14px;color:#0B3D54;margin-bottom:12px;}
+
+.ra-signature-wrap{position:relative;}
+#raSignatureCanvas{
+  width:100%;max-width:560px;height:160px;border:2px dashed #C9D3D8;border-radius:8px;
+  background:#FCFCFA;touch-action:none;cursor:crosshair;display:block;
+}
+.ra-sig-clear{
+  position:absolute;top:8px;right:8px;background:#fff;border:1px solid #DEE3E6;
+  border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;color:#55606B;
+}
+.ra-sig-clear:hover{background:#F0EEE6;}
+
+.ra-checkbox{
+  display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#3F4A52;
+  margin:16px 0;cursor:pointer;line-height:1.5;
+}
+.ra-checkbox input{margin-top:3px;flex-shrink:0;}
+
+.form-hint{font-size:14px;color:#55606B;line-height:1.5;margin:8px 0 14px;}
+
+.ra-error{background:#FCE8E6;color:#C0392B;border:1px solid #F1C4BE;padding:10px 14px;border-radius:6px;font-size:13px;margin-bottom:14px;}
+
+.ra-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:8px;}
+
+.ra-success{text-align:center;padding:30px 10px;}
+.ra-success i{font-size:42px;color:#2E7D32;margin-bottom:14px;display:block;}
+
+/* ---- Payment & Security Authorization ---- */
+.ra-payment-auth{background:#F0F6F8;}
+.ra-deductible-option{background:#fff;border:1px solid #E3E8EA;border-radius:6px;padding:12px 14px;margin:10px 0;}
+.ra-deductible-option:hover{border-color:#C9973E;}
+.ra-success p{font-size:15px;color:#0B3D54;}
+
+@media (max-width:600px){
+  .ra-modal{max-height:92vh;}
+  .ra-modal-header, .ra-modal-body{padding-left:18px;padding-right:18px;}
+  .ra-actions{flex-direction:column-reverse;}
+  .ra-actions .btn{width:100%;}
+}

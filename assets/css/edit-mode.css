@@ -1,0 +1,86 @@
+/* ============================================================
+   EDIT MODE — visual layer
+   Only ever active for logged-in admins; regular visitors never
+   load any of this UI (edit-mode.js checks session first).
+   ============================================================ */
+
+.edit-toggle-btn{
+  position:fixed;bottom:24px;right:24px;z-index:100000;
+  background:#0B3D54;color:#fff;border:none;border-radius:30px;
+  padding:12px 22px;font-size:13px;font-weight:700;font-family:'Poppins',sans-serif;
+  box-shadow:0 8px 24px rgba(0,0,0,0.25);cursor:pointer;
+  display:flex;align-items:center;gap:8px;transition:background .2s ease;
+}
+.edit-toggle-btn:hover{background:#092E3F;}
+.edit-toggle-btn.active{background:#C9973E;}
+.edit-toggle-btn .dot{width:8px;height:8px;border-radius:50%;background:#8FA0A8;}
+.edit-toggle-btn.active .dot{background:#fff;}
+
+/* Hover affordance on every editable zone, only while edit mode is on */
+body.edit-mode-active [data-edit-id]{outline:1px dashed transparent;outline-offset:2px;transition:outline-color .15s ease;cursor:pointer;}
+body.edit-mode-active [data-edit-id]:hover{outline-color:rgba(201,151,62,0.7);}
+body.edit-mode-active [data-edit-type="text"][contenteditable="true"]{
+  outline:2px solid #C9973E !important;background:rgba(201,151,62,0.08);cursor:text;
+}
+body.edit-mode-active [data-edit-type="section"]{position:relative;}
+
+/* Small gear/settings badge injected on sections and buttons */
+.edit-gear{
+  position:absolute;z-index:9999;background:#0B3D54;color:#fff;border:none;
+  border-radius:50%;width:30px;height:30px;font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+.edit-gear:hover{background:#C9973E;}
+section .edit-gear, div.booking-bar .edit-gear{top:10px;left:10px;}
+a.btn .edit-gear{top:-12px;right:-12px;width:24px;height:24px;font-size:11px;}
+
+/* Image zones get a small overlay label on hover instead of a gear (click anywhere on the image works) */
+body.edit-mode-active [data-edit-type="image"]{position:relative;}
+body.edit-mode-active [data-edit-type="image"]:hover::after{
+  content:"Click to change image";position:absolute;inset:0;
+  background:rgba(11,61,84,0.75);color:#fff;font-size:13px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;
+}
+
+/* Popover backdrop + panel (shared by all style/image panels) */
+.edit-popover-backdrop{position:fixed;inset:0;z-index:100000;background:transparent;}
+.edit-popover{
+  position:fixed;z-index:100001;background:#fff;border-radius:10px;width:300px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);padding:20px;font-family:'Poppins',sans-serif;
+  color:#0B3D54;max-height:80vh;overflow-y:auto;
+}
+.edit-popover h4{font-size:14px;margin-bottom:14px;font-family:'Poppins',sans-serif;}
+.edit-popover-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.edit-popover-field{margin-bottom:12px;}
+.edit-popover-field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:5px;color:#55606B;}
+.edit-popover-field input[type="number"],
+.edit-popover-field input[type="text"],
+.edit-popover-field input[type="url"],
+.edit-popover-field select{
+  width:100%;border:1px solid #DEE3E6;border-radius:5px;padding:8px 10px;font-size:13px;font-family:inherit;
+}
+.edit-popover-field input[type="color"]{width:100%;height:36px;border:1px solid #DEE3E6;border-radius:5px;padding:2px;cursor:pointer;}
+.edit-popover-actions{display:flex;gap:8px;margin-top:14px;}
+.edit-popover-actions button{flex:1;padding:9px;border-radius:6px;border:none;font-size:12.5px;font-weight:700;cursor:pointer;}
+.edit-popover-save{background:#C9973E;color:#fff;}
+.edit-popover-save:hover{background:#B4863A;}
+.edit-popover-cancel{background:#F0EEE6;color:#0B3D54;}
+.edit-popover-cancel:hover{background:#E6E1D5;}
+.edit-popover-hint{font-size:11.5px;color:#55606B;margin-bottom:12px;}
+.edit-popover-remove-bg{
+  width:100%;background:#FCE8E6;color:#C0392B;border:1px solid #F1C4BE;
+  padding:8px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:6px;
+}
+.edit-popover-remove-bg:hover{background:#F8D7D3;}
+
+/* Button hover animation presets — applied via data-hover-anim, only take
+   effect on the public site (not gated to edit mode, these are the real
+   saved styles visitors will see) */
+a.btn[data-hover-anim="lift"]:hover{transform:translateY(-3px);}
+a.btn[data-hover-anim="scale"]:hover{transform:scale(1.06);}
+a.btn[data-hover-anim="glow"]:hover{box-shadow:0 0 18px rgba(201,151,62,0.7);}
+
+@media (max-width:600px){
+  .edit-toggle-btn{bottom:14px;right:14px;padding:10px 16px;font-size:12px;}
+  .edit-popover{width:calc(100vw - 40px);}
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservations | Sol Y Sand Rentals</title>
+<meta content="Reserve your golf cart in Flamingo, Costa Rica the easy way." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<link href="assets/css/edit-mode.css" rel="stylesheet"/><link href="assets/css/rental-agreement.css" rel="stylesheet"/><link href="assets/demo/demo-bar.css" rel="stylesheet"/>
+<script src="assets/data/demo-db.js"></script>
+<script src="assets/demo/demo-core.js"></script>
+<script src="assets/demo/demo-shim.js"></script>
+</head>
+<body>
+<header id="siteHeader">
+<div class="container">
+<a class="logo" href="index.html">
+<img alt="Sol Y Sand Rentals logo" src="uploads/media/logo.png"/>
+</a>
+<nav class="main-nav" id="mainNav">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="our-fleet.html">Our Fleet</a>
+<a href="pricing.html">Pricing</a>
+<a class="active" href="reservations.html">Reservations</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="phone-pill" href="tel:+50686148257"><i class="fas fa-phone-alt"></i> +506 8614-8257</a>
+<a class="btn btn-gold" href="reservations.html#check-availability">Book Now</a>
+<button aria-label="Open menu" class="burger" id="burgerBtn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</header>
+<section class="hero hero-sm" data-edit-id="reservations.section1" data-edit-type="section" style="background-image:linear-gradient(180deg, rgba(6,30,42,0.15) 0%, rgba(6,30,42,0.45) 100%), url('uploads/media/reservations-hero.jpg');padding-top:200px;">
+<div class="container">
+<div class="hero-content">
+<span class="eyebrow" data-edit-id="reservations.text3" data-edit-type="text">Reservations</span>
+<h1 data-edit-id="reservations.text1" data-edit-type="text">Book Your Adventure The Easy Way.</h1>
+<p data-edit-id="reservations.text2" data-edit-type="text">Reserve your golf cart in minutes and get ready to explore the beaches of Flamingo, Potrero and Brasilito with unlimited range.</p>
+</div>
+<div class="hero-right"></div>
+</div>
+</section>
+<section data-edit-id="reservations.section2" data-edit-type="section" id="check-availability" style="scroll-margin-top:110px;">
+<div class="container">
+<div class="reservations-grid">
+<div>
+<span class="eyebrow" data-edit-id="reservations.text12" data-edit-type="text">Make A Reservation</span>
+<h2 data-edit-id="reservations.text4" data-edit-type="text" style="font-size:30px;margin-bottom:10px;">Reserve Your Golf Cart</h2>
+<p data-edit-id="reservations.text8" data-edit-type="text" style="color:var(--body-text);">Select your dates and preferences below. We'll take care of the rest!</p>
+<div class="res-intro-list">
+<div class="res-intro-item"><div class="icon-circle"><i class="fas fa-check-circle"></i></div><div><h4 data-edit-id="reservations.text5" data-edit-type="text">Easy Online Requests</h4><p data-edit-id="reservations.text9" data-edit-type="text">Lock in your dates online. We'll review your details and send your official confirmation shortly.</p></div></div>
+<div class="res-intro-item"><div class="icon-circle"><i class="fas fa-calendar-times"></i></div><div><h4 data-edit-id="reservations.text6" data-edit-type="text">Free Cancellation</h4><p data-edit-id="reservations.text10" data-edit-type="text">Cancel up to 24 hours in advance for free.</p></div></div>
+<div class="res-intro-item"><div class="icon-circle"><i class="fas fa-tags"></i></div><div><h4 data-edit-id="reservations.text7" data-edit-type="text">Best Rate Guarantee</h4><p data-edit-id="reservations.text11" data-edit-type="text">Enjoy the best rates when you book direct.</p></div></div>
+</div>
+</div>
+<div class="form-card">
+<div id="reservationBanner" style="display:none;" class="alert"></div>
+<div id="maintenanceNotice" style="display:none;" class="alert alert-error"></div>
+<!--
+          This form submits to reservation-submit.php, which emails
+          the full inquiry straight to info@solysandrentals.com.
+        -->
+<form action="/php/reservation-submit.php" method="POST" id="reservationForm">
+<input type="hidden" name="season" id="hiddenSeason">
+<input type="hidden" name="estimated_days" id="hiddenDays">
+<input type="hidden" name="daily_rate" id="hiddenDailyRate">
+<input type="hidden" name="subtotal" id="hiddenSubtotal">
+<input type="hidden" name="iva_tax" id="hiddenTax">
+<input type="hidden" name="estimated_total" id="hiddenTotal">
+<div class="form-grid-3">
+<div class="form-field"><label for="res-location">Delivery Area</label><select id="res-location" name="pickup_location"><option>Brasilito, Costa Rica</option><option selected>Flamingo, Costa Rica</option><option>Surfside, Costa Rica</option><option>Potrero, Costa Rica</option></select></div>
+<div class="form-field"><label for="res-pickup-date">Delivery Date</label><input id="res-pickup-date" name="pickup_date" required="" type="text" autocomplete="off" placeholder="Select date"/></div>
+<div class="form-field"><label for="res-pickup-time">Delivery Time</label><input id="res-pickup-time" name="pickup_time" type="time" value="09:00"/></div>
+</div>
+<div class="form-grid-3">
+<div class="form-field"><label for="res-dropoff-date">Return Date</label><input id="res-dropoff-date" name="dropoff_date" required="" type="text" autocomplete="off" placeholder="Select date"/></div>
+<div class="form-field"><label for="res-dropoff-time">Return Time</label><input id="res-dropoff-time" name="dropoff_time" type="time" value="16:00"/></div>
+<div class="form-field"><label for="res-cart-type">Golf Cart Type</label><select data-fleet-select="" data-cart-id-input="res-cart-id" id="res-cart-type" name="cart_type" required></select><input type="hidden" id="res-cart-id" name="cart_id"></div>
+</div>
+<div class="form-grid">
+<div class="form-field"><label for="res-carts">Number of Carts</label><select id="res-carts" name="num_carts"><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+<div class="form-field"><label for="res-name">Full Name</label><input id="res-name" name="full_name" required="" type="text"/></div>
+</div>
+<div class="form-grid">
+<div class="form-field"><label for="res-email">Email Address</label><input id="res-email" name="email_address" required="" type="email"/></div>
+<div class="form-field"><label for="res-phone">Phone Number</label><input id="res-phone" name="phone_number" type="tel"/></div>
+</div>
+<div class="form-grid full">
+<div class="form-field">
+<label for="res-rental-location">Where Are You Staying?</label>
+<input id="res-rental-location" name="rental_location" placeholder="Name and/or location of the property" required type="text">
+<div class="form-hint" style="font-size:14px;margin-top:8px;">Please provide the name and/or location of the place where you're staying.<br>Some homes and condos sit on very steep hills, and their driveways! The carts are not 4-wheel drive or built to climb. We'll let you know if your location works.</div>
+</div>
+</div>
+<div class="approval-disclaimer">
+<i class="fas fa-shield-alt"></i> To keep you safe and our carts in peak condition, we restrict rentals to designated authorized areas. Please check with us to confirm your destination is approved.
+</div>
+<div class="form-grid full">
+<div class="form-field">
+<label for="res-refuel">Refueling Option</label>
+<select id="res-refuel" name="refueling_option">
+<option value="No — I'll return with a full tank">No thanks</option>
+<option value="Yes — add $30 flat refueling fee">Yes — add the $30 flat refueling fee</option>
+</select>
+<div class="form-hint">Every cart comes with a full tank of gas. Don't want to worry about filling up before you return? Skip the pump and leave it to us for a flat $30 refueling fee.</div>
+</div>
+</div>
+<div class="form-grid full">
+<div class="form-field">
+<label for="res-insurance">Insurance</label>
+<select id="res-insurance" name="insurance_option">
+<option value="none">None — I accept full responsibility for repair/replacement cost (up to $1,000 authorized)</option>
+<option value="standard">Deductible Limitation Package — $10/night ($500 authorized)</option>
+</select>
+<div class="form-hint">Local third-party liability coverage is included at no extra cost. The optional Deductible Limitation Package ($10/night) lowers your maximum out-of-pocket responsibility for accidental damage or theft to $500 instead of $1,000. Full details are in our <a href="#" class="rental-agreement-trigger-link credit-link">Rental Agreement</a>.</div>
+</div>
+</div>
+<div class="form-grid full">
+<div class="form-field"><label for="res-notes">Special Requests (Optional)</label><textarea id="res-notes" name="special_requests" placeholder="Let us know if you have any special requests..."></textarea></div>
+</div>
+
+<div class="price-estimate" id="priceEstimate" style="display:none;">
+<div class="price-estimate-header">Estimated Price</div>
+<div class="price-row"><span id="peSeasonLabel">Season</span><span id="peSeasonValue">&mdash;</span></div>
+<div class="price-row"><span>Daily Rate &times; <span id="peDays">0</span> days &times; <span id="peCarts">1</span> cart(s)</span><span id="peSubtotal">$0.00</span></div>
+<div class="price-row" id="peFuelRow" style="display:none;"><span>Refueling Fee</span><span id="peFuelFee">$30.00</span></div>
+<div class="price-row" id="peInsuranceRow" style="display:none;"><span>Deductible Limitation Package ($10/night)</span><span id="peInsuranceFee">$0.00</span></div>
+<div class="price-row"><span>13% IVA Tax</span><span id="peTax">$0.00</span></div>
+<div class="price-row price-total"><span>Estimated Total</span><span id="peTotal">$0.00</span></div>
+<div class="price-note">Prices subject to 13% IVA taxes. This is an estimate — final pricing is confirmed when we respond to your inquiry.</div>
+</div>
+<div class="price-error" id="priceError" style="display:none;"></div>
+<div class="price-error" id="availabilityError" style="display:none;"></div>
+
+<div class="form-grid full">
+<div class="form-field">
+<label>Payment Method</label>
+<div class="payment-options">
+<label class="payment-option"><input checked="" name="payment_method" type="radio" value="Credit Card"> Credit Card</label>
+<label class="payment-option"><input name="payment_method" type="radio" value="Cash"> <i class="fas fa-money-bill-wave"></i> Cash</label>
+<label class="payment-option"><input name="payment_method" type="radio" value="Bank Transfer"> Bank Transfer</label>
+</div>
+</div>
+</div>
+<div class="card-payment-info" id="cardPaymentInfo">
+<p class="form-hint">No card details are collected on this form and we will not send a payment link. Your credit card is charged in person for the estimated total when your cart is delivered.</p>
+</div>
+<div class="bank-transfer-info" id="cashPaymentInfo" style="display:none;">
+<strong>Paying With Cash</strong>
+<p>No payment is needed now &mdash; simply have the estimated total in cash ready when your cart is delivered. We'll confirm the final amount in our reply to your inquiry.</p>
+</div>
+<div class="bank-transfer-info" id="bankTransferInfo" style="display:none;">
+<strong>Paying By Bank Transfer</strong>
+<p>No account details are needed now &mdash; we'll send secure bank transfer instructions in our reply once your inquiry is confirmed.</p>
+</div>
+
+<div class="form-actions">
+<div class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</div>
+<button class="btn btn-gold" type="submit">Check Availability</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section class="split-section cream" data-edit-id="reservations.section3" data-edit-type="section" style="padding:60px 0;">
+<div class="container" style="display:block;">
+<div class="section-head"><span class="eyebrow" data-edit-id="reservations.text21" data-edit-type="text">Why Book Direct?</span></div>
+<div class="icon-row">
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-tag"></i></div><h4 data-edit-id="reservations.text13" data-edit-type="text">Lowest Prices</h4><p data-edit-id="reservations.text17" data-edit-type="text">Get the best rates when you book directly with us.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-calendar-alt"></i></div><h4 data-edit-id="reservations.text14" data-edit-type="text">Flexible Options</h4><p data-edit-id="reservations.text18" data-edit-type="text">Easily modify or cancel your reservation.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-headset"></i></div><h4 data-edit-id="reservations.text15" data-edit-type="text">Local Support</h4><p data-edit-id="reservations.text19" data-edit-type="text">We're here to help before, during, and after your trip.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-star"></i></div><h4 data-edit-id="reservations.text16" data-edit-type="text">Premium Experience</h4><p data-edit-id="reservations.text20" data-edit-type="text">Well-maintained carts and friendly service.</p></div>
+</div>
+</div>
+</section>
+<section class="how-it-works" data-edit-id="reservations.section4" data-edit-type="section">
+<div class="container">
+<div class="section-head"><span class="eyebrow" data-edit-id="reservations.text31" data-edit-type="text">How It Works</span><h2 data-edit-id="reservations.text22" data-edit-type="text">Booking Is Simple</h2></div>
+<div class="steps">
+<div class="step"><div class="icon-circle"><i class="fas fa-calendar-alt"></i></div><h4 data-edit-id="reservations.text23" data-edit-type="text">1. Choose Dates</h4><p data-edit-id="reservations.text27" data-edit-type="text">Select your delivery and return dates and times.</p></div>
+<div class="step"><div class="icon-circle"><i class="fas fa-shopping-cart"></i></div><h4 data-edit-id="reservations.text24" data-edit-type="text">2. Select Cart</h4><p data-edit-id="reservations.text28" data-edit-type="text">Choose the perfect cart for your adventure.</p></div>
+<div class="step"><div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div><h4 data-edit-id="reservations.text25" data-edit-type="text">3. Submit Location</h4><p data-edit-id="reservations.text29" data-edit-type="text">Provide your rental or hotel name so we can coordinate your seamless delivery.</p></div>
+<div class="step"><div class="icon-circle"><i class="fas fa-check-circle"></i></div><h4 data-edit-id="reservations.text26" data-edit-type="text">4. Quick Confirmation</h4><p data-edit-id="reservations.text30" data-edit-type="text">Our team will review your location and send your official confirmation and delivery details shortly.</p></div>
+</div>
+</div>
+</section>
+<section id="faqs" data-edit-id="reservations.section5" data-edit-type="section" style="scroll-margin-top:110px;">
+<div class="container">
+<div class="section-head left"><span class="eyebrow" data-edit-id="reservations.text39" data-edit-type="text">Frequently Asked Questions</span><h2 data-edit-id="reservations.text32" data-edit-type="text">Have Questions?</h2></div>
+<div class="faq-grid">
+<div>
+<div class="faq-item open">
+<button class="faq-question">Can I cancel or modify my reservation? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p data-edit-id="reservations.text34" data-edit-type="text">Yes! You can cancel up to 24 hours before your delivery time for a full refund. If your schedule changes, reach out to us and we'll update your details.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Do I need a driver's license? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p data-edit-id="reservations.text35" data-edit-type="text">Yes, a valid driver's license is required to rent and operate a golf cart.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What is included with the rental? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p data-edit-id="reservations.text36" data-edit-type="text">All carts include roof shade, a horn, windshield, and headlights, cup holders, and a rear-view mirror — and are fully street legal.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Is there a minimum rental period? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p data-edit-id="reservations.text37" data-edit-type="text">We offer daily rentals and multi-day discounts. To view our minimum rental periods and seasonal requirements, visit our <a href="pricing.html" class="credit-link">Pricing Page</a>.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Where can I drive the golf cart? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p>You can drive our golf carts on all local public roads throughout the Brasilito, Flamingo, and Playa Potrero areas. Just remember that the same traffic laws that apply to cars apply to golf carts. You must follow all road signs and speed limits. See our full <a href="https://www.google.com/maps/d/viewer?mid=1_HnqLSw7VQg7lueyGs6MygrAGV0NRC8" class="credit-link" target="_blank" rel="noopener">service area map</a> for exact coverage.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What protection/insurance options are available? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer">
+<p>To provide peace of mind during your rental, we offer two vehicle protection tiers.</p>
+<p><strong>Standard Rental Terms (Basic Liability):</strong> Local third-party liability coverage is included at no extra cost. However, the renter is fully responsible for the actual cost of any physical damage, loss, or theft of the golf cart during the rental period.</p>
+<p><strong>Deductible Limitation Package ($10/day):</strong> This optional package limits your maximum out-of-pocket financial responsibility for accidental damage or theft of the golf cart to $1,000.</p>
+<p><strong>Note on personal policies:</strong> Standard personal auto insurance and credit card rental benefits frequently exclude golf carts and low-speed vehicles, particularly outside your home country. We highly recommend verifying your specific coverage rules before arriving if you plan to decline local coverage.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Do you require a security deposit? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer">
+<p>No upfront hold is placed on your card. To ensure the safe care and return of our vehicles, we secure a Credit Card Authorization upon delivery to keep your card securely on file.</p>
+<p><strong>If you choose our Standard Damage Coverage ($10/day):</strong> Your authorized damage liability limit is capped at $500.</p>
+<p><strong>If you decline our Damage Coverage:</strong> You authorize a maximum damage liability limit of $1,000 on your card.</p>
+<p>Your card is only charged in the event of documented physical damage, missing keys, late returns, or traffic/administrative fines upon the return of the golf cart. If the cart is returned safely and on time, your card details are permanently and securely destroyed.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What are the full rental requirements? <i class="fas fa-chevron-down"></i></button>
+<div class="faq-answer"><p>Full details on age/license requirements, passenger limits, authorized driving areas, and deposit policies are in our <a href="#" class="rental-agreement-trigger-link credit-link">Rental Agreement</a>, which you'll review before your booking is confirmed. You can also see a summary on our <a href="pricing.html" class="credit-link">Pricing page</a>.</p></div>
+</div>
+</div>
+<div class="faq-help-card" style="background-image:url('uploads/media/route-trail.jpg');">
+<div class="faq-help-content">
+<h4 data-edit-id="reservations.text33" data-edit-type="text">Need More Help?</h4>
+<p data-edit-id="reservations.text38" data-edit-type="text">Our team is here to assist you with any questions or special requests.</p>
+<a class="btn btn-gold" data-edit-id="reservations.button1" data-edit-type="button" href="contact.html#contact-form"><span class="edit-text-inner">Contact Us</span></a>
+</div>
+</div>
+</div>
+<div class="faq-service-note">
+<i class="fas fa-exclamation-circle"></i> We do not service Reserva Conchal or Las Catalinas, and our carts are strictly prohibited on all beaches to protect local turtle nesting grounds and delicate coastal ecosystems. However, there are designated parking areas near all major beaches.
+</div>
+</div>
+</section>
+<section class="cta split-photo" data-edit-id="reservations.section6" data-edit-type="section" style="background-image:url('uploads/media/cta-background.jpg');">
+<div class="container">
+<div>
+<span class="eyebrow" data-edit-id="reservations.text42" data-edit-type="text">Ready To Explore?</span>
+<h2 data-edit-id="reservations.text40" data-edit-type="text">Book Your Adventure Today!</h2>
+<p data-edit-id="reservations.text41" data-edit-type="text">Secure your cart now and get ready for an unforgettable experience in Flamingo, Costa Rica.</p>
+<div class="cta-buttons">
+<a class="btn btn-gold" data-edit-id="reservations.button2" data-edit-type="button" href="reservations.html#check-availability"><span class="edit-text-inner">Check Availability</span></a>
+<a class="btn btn-outline-white" data-edit-id="reservations.button3" data-edit-type="button" href="tel:+50686148257"><i class="fas fa-phone-alt"></i> <span class="edit-text-inner">+506 8614-8257</span></a>
+</div>
+</div>
+<img alt="Golf cart" data-edit-id="reservations.image1" data-edit-type="image" src="uploads/media/cta-cart-shared.png"/>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="index.html"><img alt="Sol Y Sand Rentals logo" src="uploads/media/logo.png"/></a>
+<p>Sol Y Sand Rentals is a local golf cart rental company in Flamingo, Costa Rica. We're here to help you explore more and create unforgettable memories.</p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://web.facebook.com/solysandrentals" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://instagram.com/solysandrentals" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div>
+<h5>Quick Links</h5>
+<ul>
+<li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="our-fleet.html">Our Fleet</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="reservations.html">Reservations</a></li><li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact Us</h5>
+<a class="contact-item" href="tel:+50686148257"><i class="fas fa-phone-alt"></i><span>+506 8614-8257</span></a>
+<a class="contact-item" href="mailto:info@solysandrentals.com?subject=New%20Booking%20Inquiry&amp;body=Hello%20Sol%20Y%20Sand%20Rentals%20Team%2C%0D%0A%0D%0A"><i class="fas fa-envelope"></i><span>info@solysandrentals.com</span></a>
+<a class="contact-item" href="https://www.google.com/maps/search/?api=1&amp;query=Flamingo,+Guanacaste,+Costa+Rica" rel="noopener" target="_blank"><i class="fas fa-map-marker-alt"></i><span>Flamingo, Guanacaste, Costa Rica</span></a>
+</div>
+<div>
+<h5>Hours</h5>
+<div class="contact-item"><i class="fas fa-clock"></i><span>Open Every Day<br/>8:00 AM – 5:00 PM</span></div>
+</div>
+</div>
+<div class="footer-bottom"><span class="footer-copy">Copyright &copy; 2026 Sol Y Sand Rentals | Designed and Developed by <a class="credit-link" href="https://wa.me/923094490140?text=Hi%20Moiz%2C%0A%0AI%20was%20visiting%20Sol%20Y%20Sand%20Rentals%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0AThanks%21" rel="noopener" target="_blank">Moiz Ahmad</a></span><div class="footer-links-group"><a href="reservations.html#faqs" class="credit-link">FAQs</a><button type="button" class="credit-link rental-agreement-trigger">Rental Agreement</button></div></div>
+</div>
+</footer>
+<script src="assets/data/fleet-data.js"></script>
+<script src="assets/js/pricing-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/pricing-calculator.js"></script>
+<script src="assets/js/edit-mode.js"></script><script src="assets/js/rental-agreement.js"></script><script src="assets/demo/demo-bar.js"></script>
+</body>
+</html>

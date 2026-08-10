@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Sol Y Sand Rentals</title>
+<meta content="Get in touch with Sol Y Sand Rentals for questions or reservations." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<link href="assets/css/edit-mode.css" rel="stylesheet"/><link href="assets/css/rental-agreement.css" rel="stylesheet"/><link href="assets/demo/demo-bar.css" rel="stylesheet"/>
+<script src="assets/data/demo-db.js"></script>
+<script src="assets/demo/demo-core.js"></script>
+<script src="assets/demo/demo-shim.js"></script>
+</head>
+<body>
+<header id="siteHeader">
+<div class="container">
+<a class="logo" href="index.html">
+<img alt="Sol Y Sand Rentals logo" src="uploads/media/logo.png"/>
+</a>
+<nav class="main-nav" id="mainNav">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="our-fleet.html">Our Fleet</a>
+<a href="pricing.html">Pricing</a>
+<a href="reservations.html">Reservations</a>
+<a class="active" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="phone-pill" href="tel:+50686148257"><i class="fas fa-phone-alt"></i> +506 8614-8257</a>
+<a class="btn btn-gold" href="reservations.html#check-availability">Book Now</a>
+<button aria-label="Open menu" class="burger" id="burgerBtn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</header>
+<section class="hero hero-sm" data-edit-id="contact.section1" data-edit-type="section" style="background-image:linear-gradient(180deg, rgba(6,30,42,0.15) 0%, rgba(6,30,42,0.45) 100%), url('uploads/media/contact-hero.jpg');padding-top:200px;">
+<div class="container">
+<div class="hero-content">
+<span class="eyebrow" data-edit-id="contact.text3" data-edit-type="text">Contact Us</span>
+<h1 data-edit-id="contact.text1" data-edit-type="text">We're Here to Help Plan Your Adventure.</h1>
+<p data-edit-id="contact.text2" data-edit-type="text">Have questions or ready to book your rental? Our team is here to help make your Costa Rican Gold Coast experience unforgettable.</p>
+</div>
+<div class="hero-right"></div>
+</div>
+</section>
+<section data-edit-id="contact.section2" data-edit-type="section">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow" data-edit-id="contact.text14" data-edit-type="text">Get In Touch</span>
+<h2 data-edit-id="contact.text4" data-edit-type="text">Let's Connect!</h2>
+<p data-edit-id="contact.text9" data-edit-type="text" style="color:var(--body-text);margin-top:14px;">We'd love to hear from you! Reach out for reservations, questions, or local recommendations. We typically respond within a few hours.</p>
+</div>
+<div class="icon-row">
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div><h4 data-edit-id="contact.text5" data-edit-type="text">Service Area</h4><p data-edit-id="contact.text10" data-edit-type="text"><a href="https://www.google.com/maps/search/?api=1&amp;query=Flamingo,+Guanacaste,+Costa+Rica" rel="noopener" target="_blank">Flamingo, Guanacaste, Costa Rica</a></p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-phone-alt"></i></div><h4 data-edit-id="contact.text6" data-edit-type="text">Call or WhatsApp</h4><p data-edit-id="contact.text11" data-edit-type="text"><a href="https://wa.me/50686148257?text=Hi%20Sol%20Y%20Sand%20Rentals%2C%0A%0AI%20want%20to%20book%20a%20cart.%0A%0AThanks%21" rel="noopener" target="_blank">+506 8614-8257</a></p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-envelope"></i></div><h4 data-edit-id="contact.text7" data-edit-type="text">Email Us</h4><p data-edit-id="contact.text12" data-edit-type="text"><a href="mailto:info@solysandrentals.com?subject=New%20Booking%20Inquiry&amp;body=Hello%20Sol%20Y%20Sand%20Rentals%20Team%2C%0D%0A%0D%0A">info@solysandrentals.com</a> · We reply quickly!</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-clock"></i></div><h4 data-edit-id="contact.text8" data-edit-type="text">Business Hours</h4><p data-edit-id="contact.text13" data-edit-type="text">Open Every Day, 8:00 AM – 5:00 PM</p></div>
+</div>
+</div>
+</section>
+<section data-edit-id="contact.section3" data-edit-type="section" id="contact-form" style="scroll-margin-top:110px;padding-top:30px;">
+<div class="container">
+<div class="contact-grid">
+<div class="form-card">
+<span class="eyebrow" data-edit-id="contact.text21" data-edit-type="text">Send Us A Message</span>
+<h2 data-edit-id="contact.text15" data-edit-type="text" style="font-size:26px;margin-bottom:8px;">How Can We Help You?</h2>
+<p data-edit-id="contact.text18" data-edit-type="text" style="color:var(--body-text);margin-bottom:24px;">Fill out the form below and we'll get back to you as soon as possible.</p>
+<div id="contactBanner" style="display:none;" class="alert"></div>
+<!--
+          This form submits to contact-submit.php, which emails
+          the full message straight to info@solysandrentals.com.
+        -->
+<form action="/php/contact-submit.php" method="POST" id="contactForm">
+<div class="form-grid">
+<div class="form-field"><label for="c-name">Full Name</label><input id="c-name" name="full_name" placeholder="Your full name" required="" type="text"/></div>
+<div class="form-field"><label for="c-email">Email Address</label><input id="c-email" name="email_address" placeholder="Your email address" required="" type="email"/></div>
+</div>
+<div class="form-grid">
+<div class="form-field"><label for="c-phone">Phone Number</label><input id="c-phone" name="phone_number" placeholder="Your phone number" type="tel"/></div>
+<div class="form-field">
+<label for="c-subject">Subject</label>
+<select id="c-subject" name="subject">
+<option>How can we help?</option>
+<option>Reservation Question</option>
+<option>Pricing &amp; Availability</option>
+<option>General Inquiry</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<div class="form-grid full" id="cRentalLocationWrap" style="display:none;">
+<div class="form-field">
+<label for="c-rental-location">Where Are You Staying?</label>
+<input id="c-rental-location" name="rental_location" placeholder="Name and/or location of the place" type="text">
+</div>
+<div class="form-field" style="margin-top:20px;">
+<label for="c-refuel">Refueling Option</label>
+<select id="c-refuel" name="refueling_option">
+<option value="No — I'll return with a full tank">No thanks</option>
+<option value="Yes — add $30 flat refueling fee">Yes — add the $30 flat refueling fee</option>
+</select>
+<div class="form-hint">Every cart comes with a full tank of gas. Skip the pump and leave it to us for a flat $30 refueling fee.</div>
+</div>
+</div>
+<div class="form-grid full">
+<div class="form-field"><label for="c-message">Message</label><textarea id="c-message" name="message" placeholder="Type your message here..." required=""></textarea></div>
+</div>
+<div class="form-actions">
+<button class="btn btn-gold" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+<div class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</div>
+</div>
+</form>
+</div>
+<div>
+<div class="map-card map-card-embed">
+<iframe src="https://www.google.com/maps/d/embed?mid=1_HnqLSw7VQg7lueyGs6MygrAGV0NRC8" width="100%" height="230" style="border:0;" allowfullscreen="" loading="lazy" title="Sol Y Sand Rentals service area map"></iframe>
+</div>
+<div class="map-caption-card">
+<h4 data-edit-id="contact.text16" data-edit-type="text"><i class="fas fa-map-marked-alt"></i> Our Service Area</h4>
+<p data-edit-id="contact.text19" data-edit-type="text">We proudly serve the Flamingo, Potrero, and Brasilito areas with free delivery — no storefront to visit, we come to you.</p>
+<a class="btn btn-gold" data-edit-id="contact.button1" data-edit-type="button" href="https://www.google.com/maps/d/viewer?mid=1_HnqLSw7VQg7lueyGs6MygrAGV0NRC8" rel="noopener" target="_blank"><span class="edit-text-inner">View Full Map</span></a>
+</div>
+<div class="chat-card">
+<div>
+<h4 data-edit-id="contact.text17" data-edit-type="text">Prefer to Chat?</h4>
+<p data-edit-id="contact.text20" data-edit-type="text">Need quick answers? Call or WhatsApp us directly and we'll be happy to help!</p>
+<a class="btn btn-outline-navy" data-edit-id="contact.button2" data-edit-type="button" href="https://wa.me/50686148257?text=Hi%20Sol%20Y%20Sand%20Rentals%2C%0A%0AI%20want%20to%20book%20a%20cart.%0A%0AThanks%21" rel="noopener" target="_blank"><i class="fab fa-whatsapp"></i> <span class="edit-text-inner">Chat on WhatsApp</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cream" data-edit-id="contact.section4" data-edit-type="section" style="padding-top:0;">
+<div class="container">
+<div class="icon-row">
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-bolt"></i></div><h4 data-edit-id="contact.text22" data-edit-type="text">Fast Response</h4><p data-edit-id="contact.text26" data-edit-type="text">We respond within a few hours.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-shield-alt"></i></div><h4 data-edit-id="contact.text23" data-edit-type="text">Local Experts</h4><p data-edit-id="contact.text27" data-edit-type="text">We know Flamingo and we're here to help.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-users"></i></div><h4 data-edit-id="contact.text24" data-edit-type="text">Friendly Service</h4><p data-edit-id="contact.text28" data-edit-type="text">We treat every guest like family.</p></div>
+<div class="why-item centered"><div class="icon-circle"><i class="fas fa-star"></i></div><h4 data-edit-id="contact.text25" data-edit-type="text">Premium Experience</h4><p data-edit-id="contact.text29" data-edit-type="text">Top quality carts and unforgettable adventures.</p></div>
+</div>
+</div>
+</section>
+<section class="cta bg-photo" data-edit-id="contact.section5" data-edit-type="section" style="background-image:url('uploads/media/adventure-awaits.jpg');padding:100px 0;">
+<div class="container">
+<div>
+<span class="eyebrow" data-edit-id="contact.text32" data-edit-type="text">Ready To Explore?</span>
+<h2 data-edit-id="contact.text30" data-edit-type="text">Let's Make Your Adventure Unforgettable</h2>
+<p data-edit-id="contact.text31" data-edit-type="text">Book your golf cart today and explore Flamingo on your terms.</p>
+<div class="cta-buttons">
+<a class="btn btn-gold" data-edit-id="contact.button3" data-edit-type="button" href="reservations.html#check-availability"><span class="edit-text-inner">Book Your Ride Now</span></a>
+<a class="btn btn-outline-white" data-edit-id="contact.button4" data-edit-type="button" href="tel:+50686148257"><i class="fas fa-phone-alt"></i> <span class="edit-text-inner">+506 8614-8257</span></a>
+</div>
+</div>
+</div>
+</section>
+<div class="info-strip">
+<div class="container">
+<a class="info-item" href="https://www.google.com/maps/search/?api=1&amp;query=Flamingo,+Guanacaste,+Costa+Rica" rel="noopener" target="_blank"><i class="fas fa-map-marker-alt"></i><div><div class="info-label">FLAMINGO, COSTA RICA</div><div class="info-value">Guanacaste Province</div></div></a><div class="info-item"><i class="fas fa-clock"></i><div><div class="info-label">OPEN EVERY DAY</div><div class="info-value">8:00 AM - 5:00 PM</div></div></div><a class="info-item" href="https://wa.me/50686148257?text=Hi%20Sol%20Y%20Sand%20Rentals%2C%0A%0AI%20want%20to%20book%20a%20cart.%0A%0AThanks%21" rel="noopener" target="_blank"><i class="fas fa-phone-alt"></i><div><div class="info-label">CALL OR WHATSAPP</div><div class="info-value">+506 8614-8257</div></div></a><a class="info-item" href="mailto:info@solysandrentals.com?subject=New%20Booking%20Inquiry&amp;body=Hello%20Sol%20Y%20Sand%20Rentals%20Team%2C%0D%0A%0D%0A"><i class="fas fa-envelope"></i><div><div class="info-label">EMAIL US</div><div class="info-value">info@solysandrentals.com</div></div></a>
+</div>
+</div>
+<div class="copyright-bar">
+<div class="container">
+<span class="footer-copy">Copyright &copy; 2026 Sol Y Sand Rentals | Designed and Developed by <a class="credit-link" href="https://wa.me/923094490140?text=Hi%20Moiz%2C%0A%0AI%20was%20visiting%20Sol%20Y%20Sand%20Rentals%20and%20would%20like%20to%20discuss%20a%20project%20with%20you.%0A%0AThanks%21" rel="noopener" target="_blank">Moiz Ahmad</a></span><div class="footer-links-group"><a href="reservations.html#faqs" class="credit-link">FAQs</a><button type="button" class="credit-link rental-agreement-trigger">Rental Agreement</button></div>
+</div>
+</div>
+<script src="assets/data/fleet-data.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/edit-mode.js"></script><script src="assets/js/rental-agreement.js"></script><script src="assets/demo/demo-bar.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 265" width="420" height="265" role="img" aria-label="Sample document placeholder">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#EDF3F6"/><stop offset="1" stop-color="#D8E4EA"/></linearGradient></defs>
+<rect width="420" height="265" rx="14" fill="url(#g)"/>
+<rect x="10" y="10" width="400" height="245" rx="10" fill="none" stroke="#0B3D54" stroke-opacity=".25" stroke-dasharray="7 6"/>
+<rect x="30" y="34" width="360" height="34" rx="6" fill="#0B3D54" fill-opacity=".08"/>
+<text x="210" y="57" font-family="Georgia,serif" font-size="17" fill="#0B3D54" text-anchor="middle">DEMO DOCUMENT — LICENCE FRONT</text>
+<rect x="30" y="88" width="96" height="112" rx="8" fill="#0B3D54" fill-opacity=".12"/>
+<circle cx="78" cy="128" r="21" fill="#0B3D54" fill-opacity=".22"/>
+<path d="M48 190c0-18 13-31 30-31s30 13 30 31z" fill="#0B3D54" fill-opacity=".22"/>
+<rect x="144" y="94" width="150" height="12" rx="6" fill="#0B3D54" fill-opacity=".16"/>
+<rect x="144" y="120" width="187" height="12" rx="6" fill="#0B3D54" fill-opacity=".16"/>
+<rect x="144" y="146" width="224" height="12" rx="6" fill="#0B3D54" fill-opacity=".16"/>
+<rect x="144" y="172" width="171" height="12" rx="6" fill="#0B3D54" fill-opacity=".16"/>
+<text x="210" y="232" font-family="-apple-system,Segoe UI,sans-serif" font-size="11.5" fill="#55606B" text-anchor="middle">Placeholder image · no real personal data in this demo</text>
+</svg>

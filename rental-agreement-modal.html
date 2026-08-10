@@ -1,0 +1,195 @@
+<div class="ra-backdrop" id="raBackdrop">
+  <div class="ra-modal" role="dialog" aria-modal="true" aria-labelledby="raTitle">
+    <div class="ra-modal-header">
+      <h2 id="raTitle">Golf Cart Rental Agreement &amp; Liability Waiver</h2>
+      <button type="button" class="ra-close" id="raCloseBtn" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="ra-modal-body">
+      <div class="ra-gate-notice" id="raGateNotice" style="display:none;">
+        Please review and sign this rental agreement before we can check availability for you.
+      </div>
+
+      <div class="ra-step-1" id="raStep1">
+        <p class="ra-intro">Before you continue, please review a few key things:</p>
+        <div class="ra-requirements-list">
+          <div class="ra-req-item"><i class="fas fa-id-card"></i><div><strong>Valid driver's license required</strong><p>Renter must be at least 21 years old and hold a valid license.</p></div></div>
+          <div class="ra-req-item"><i class="fas fa-users"></i><div><strong>4-person maximum</strong><p>Carts are limited to 4 passengers at all times, no exceptions.</p></div></div>
+          <div class="ra-req-item"><i class="fas fa-map-marked-alt"></i><div><strong>Authorized areas only</strong><p>To keep you safe and our carts in peak condition, rentals are restricted to designated authorized areas. We'll confirm your destination is approved.</p></div></div>
+          <div class="ra-req-item"><i class="fas fa-mountain"></i><div><strong>Not built for steep hills</strong><p>Our carts aren't 4-wheel drive. Some hillside homes and driveways may not be accessible — we'll confirm based on where you're staying.</p></div></div>
+          <div class="ra-req-item"><i class="fas fa-gas-pump"></i><div><strong>Gas-powered, unlimited range</strong><p>Never worry about charging — explore from Flamingo to Potrero and Brasilito without looking for a plug.</p></div></div>
+        </div>
+        <p class="ra-disclaimer">By continuing, you confirm you understand these rental expectations. You'll provide your full details and sign the rental agreement on the next step.</p>
+        <div class="ra-actions">
+          <button type="button" class="btn btn-outline-navy" id="raStep1Cancel">Cancel</button>
+          <button type="button" class="btn btn-gold" id="raStep1Continue">Continue to Rental Agreement</button>
+        </div>
+      </div>
+
+      <form id="raForm" enctype="multipart/form-data" style="display:none;">
+
+        <p class="ra-intro">This Agreement is entered into between:</p>
+        <div class="ra-company-block">
+          <strong>Sol Y Sand Rentals</strong> ("Company") &mdash; Flamingo, Guanacaste, Costa Rica
+        </div>
+        <p class="ra-intro">And:</p>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Renter Name</label>
+            <input type="text" name="full_name" id="raFullName" required>
+          </div>
+          <div class="form-field">
+            <label>Date of Birth</label>
+            <input type="date" name="date_of_birth" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Passport / National ID #</label>
+            <input type="text" name="id_number" required>
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" name="phone" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" name="email" id="raEmailTop" required>
+        </div>
+        <div class="form-field">
+          <label>Where Are You Staying?</label>
+          <input type="text" name="rental_location" placeholder="Name and/or location of the property" required>
+          <div class="form-hint" style="margin-top:6px;">Please provide the name and/or location of the place where you're staying. Some homes and condos sit on very steep hills, and their driveways! The carts are not 4-wheel drive or built to climb. We'll let you know if your location works.</div>
+        </div>
+
+        <div class="ra-terms">
+          <h4>1. Rental Terms</h4>
+          <p><strong>Rental Period:</strong> As specified in booking confirmation. <strong>Night Use:</strong> Allowed with headlights only. <strong>Age:</strong> Minimum 21; ages 21&ndash;24 may require additional deposit up to $250. <strong>Maximum Passengers:</strong> 4 persons per cart at all times, no exceptions.</p>
+          <p><strong>Delivery:</strong> $50 fee for no-show or rescheduling with less than 24 hours notice. If Company delivery is delayed more than 2 hours, Renter receives pro-rated credit.</p>
+          <p><strong>Extensions:</strong> Notify 4+ hours in advance. Unauthorized late returns: $100/day. <strong>Cancellation:</strong> 24+ hours before delivery: 50% refund or 75% credit (valid 6 months). Under 24 hours or no-show: non-refundable.</p>
+          <p><strong>Steep Hills &amp; Driveways:</strong> Some rental houses and condos are located on very steep hills and driveways. Please keep in mind that our carts are not 4-wheel drive or built to handle/climb some of these hills — this is especially true with a cart full of adults. We're here to help you plan routes that we know the carts can handle.</p>
+
+          <h4>2. Authorized Drivers</h4>
+          <p>Only the Renter and drivers listed below may operate the vehicle. All must hold a valid license and be 21+. Renter is responsible for all authorized drivers' actions.</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field"><label>Additional Driver</label><input type="text" name="driver2_name" placeholder="Name"></div>
+          <div class="form-field"><label>License #</label><input type="text" name="driver2_license" placeholder="License Number"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Additional Driver</label><input type="text" name="driver3_name" placeholder="Name"></div>
+          <div class="form-field"><label>License #</label><input type="text" name="driver3_license" placeholder="License Number"></div>
+        </div>
+
+        <div class="ra-terms">
+          <h4>3. Vehicle Condition</h4>
+          <p>Company will provide a vehicle in good working condition. Renter agrees to inspect the vehicle at delivery and note any pre-existing damage. Unreported damage may be charged to Renter.</p>
+
+          <h4>4. Prohibited Uses</h4>
+          <p>The vehicle shall NOT be used for: racing, stunts, or reckless driving; towing; exceeding passenger capacity; commercial purposes (ride-sharing, deliveries, paid tours); transporting hazardous or illegal materials; operation under the influence of alcohol or drugs; use by unlicensed or unauthorized persons; any illegal activity. The vehicle may NOT be subleased, loaned, or rented to any third party.</p>
+          <p><strong>Violation voids all coverage and may result in immediate termination without refund.</strong></p>
+
+          <h4>5. Insurance &amp; Liability</h4>
+          <p><strong>Included:</strong> Costa Rica's mandatory Marchamo insurance (third-party bodily injury and third-party property damage, on public roads only). Marchamo does not cover damage to the golf cart itself.</p>
+          <p><strong>Optional Cart Damage Coverage:</strong></p>
+          <p><strong>Standard ($10/day):</strong> Limits Renter's maximum physical damage liability for the golf cart to a $1,000 deductible. Renter authorizes a maximum damage security charge of $500 on their credit card on file.</p>
+          <p><strong>Declined Coverage:</strong> If no coverage is selected, Renter is fully responsible for the actual repair or replacement cost of the golf cart. Renter authorizes a security charge of up to $1,000 on their credit card on file to cover initial damage assessments, plus liability for any repair costs exceeding that amount.</p>
+          <p><strong>Note:</strong> All coverage is strictly voided in cases of prohibited uses, reckless operation, underage driving, or intoxication.</p>
+          <p>Renter assumes responsibility for: vehicle damage beyond coverage, injury to Renter/passengers/third parties, and third-party property damage beyond Marchamo limits. Renter agrees to indemnify and hold harmless the Company from all claims, damages, and expenses arising from vehicle use. This indemnity survives termination of this Agreement.</p>
+        <p class="ra-disclaimer" style="margin-top:-6px;">Your deductible protection choice and credit card authorization are collected together below, in the Payment &amp; Security Authorization section.</p>
+        </div>
+
+        <div class="ra-terms">
+          <h4>6. Deposit &amp; Payment Authorization</h4>
+          <p><strong>Security Authorization:</strong> In lieu of an upfront cash or processed credit card hold, Renter agrees to provide a valid credit card upon delivery to be kept securely on file as a security deposit.</p>
+          <p><strong>Charges to Card on File:</strong> Renter explicitly authorizes Sol Y Sand Rentals to process charges to the credit card on file for:</p>
+          <ul>
+            <li>Documented physical damage to the vehicle up to the liability limit defined in Section 5.</li>
+            <li>Excessive cleaning fees (up to $75).</li>
+            <li>Unauthorized late returns ($100/day).</li>
+            <li>Lost or damaged keys (up to $50).</li>
+            <li>Government traffic fines incurred during the rental, plus a $150 administrative fee for repossessing confiscated license plates.</li>
+          </ul>
+          <p><strong>Destruction of Data:</strong> Upon the safe, timely, and undamaged return of the vehicle, the credit card details held on file will be permanently and securely destroyed.</p>
+
+          <h4>7. Replacement, Repossession &amp; GPS</h4>
+          <p><strong>Replacement:</strong> For mechanical failures not caused by Renter, Company will attempt to provide a replacement within 24 hours. If unavailable, Renter receives a pro-rated refund. Company is not liable for consequential damages.</p>
+          <p><strong>Repossession:</strong> Company may repossess the vehicle without notice if misused, abandoned, not returned on time, or involved in illegal activity. Renter pays all repossession costs including towing, storage, and legal fees.</p>
+          <p><strong>GPS:</strong> Some vehicles have GPS tracking. Renter consents to tracking for safety and recovery. Data may be shared with law enforcement if required.</p>
+
+          <h4>8. General Terms</h4>
+          <p><strong>Force Majeure:</strong> Neither party is liable for failures due to natural disasters, government orders, pandemics, or other events beyond reasonable control. Company will offer full credit (valid 12 months) or refund minus non-recoverable costs.</p>
+          <p><strong>Governing Law:</strong> This Agreement is governed by Costa Rica law. Disputes shall be resolved in the courts of Santa Cruz, Guanacaste.</p>
+          <p><strong>Entire Agreement:</strong> This Agreement and the booking confirmation constitute the entire agreement. Modifications must be in writing. If any provision is unenforceable, remaining provisions remain in effect.</p>
+          <p class="ra-disclaimer">This is a general summary of rental terms and does not constitute legal advice. Sol Y Sand Rentals reserves the right to update these terms at any time.</p>
+        </div>
+
+        <div class="ra-upload-block">
+          <h4>Driver's License Upload</h4>
+          <div class="form-field">
+            <label>Driver's License &ndash; Front (photo: JPG or PNG)</label>
+            <input type="file" name="license_front" accept=".jpg,.jpeg,.png" required>
+          </div>
+          <div class="form-field">
+            <label>Driver's License &ndash; Back (photo: JPG or PNG)</label>
+            <input type="file" name="license_back" accept=".jpg,.jpeg,.png" required>
+          </div>
+        </div>
+
+        <div class="ra-terms ra-payment-auth">
+          <h4>Payment &amp; Security Authorization</h4>
+          <p class="ra-disclaimer" style="margin-top:0;">No credit card details are collected on this form. Once your reservation is approved, our team will follow up by email to securely collect your card details for the security deposit hold described below.</p>
+
+          <p style="margin-top:18px;"><strong>Deductible Protection Option</strong> (Check One):</p>
+          <label class="ra-checkbox ra-deductible-option">
+            <input type="radio" name="insurance_option" value="standard" required>
+            <span>I <strong>ACCEPT</strong> the Deductible Limitation Package ($10/night). I authorize a damage/loss liability limit of $500.</span>
+          </label>
+          <label class="ra-checkbox ra-deductible-option">
+            <input type="radio" name="insurance_option" value="none" required>
+            <span>I <strong>DECLINE</strong> the Deductible Limitation Package. I authorize a damage/loss liability limit of $1,000.</span>
+          </label>
+
+          <p style="margin-top:18px;"><strong>Authorization &amp; Acknowledgment:</strong> By signing below, I authorize Sol y Sand Rentals to collect my credit card details by email once my reservation is approved, and to keep those details securely on file for the duration of the rental period. I explicitly authorize Sol y Sand Rentals to charge this card for the cost of any physical damage, missing parts, late return fees, or policy violations incurred during my rental, up to the maximum liability limit selected above. I agree that no upfront hold or charge will be made, and this card will only be billed if damage or contract violations are documented upon the vehicle's return.</p>
+        </div>
+
+        <div class="form-field">
+          <label>Your Legal Name</label>
+          <input type="text" id="raSignatureName" placeholder="Type your full legal name" required>
+        </div>
+        <div class="form-field">
+          <label>Your Email Address</label>
+          <input type="email" id="raSignatureEmail" placeholder="Your email address" required>
+        </div>
+
+        <label class="ra-checkbox">
+          <input type="checkbox" name="agree_terms" id="raAgreeCheckbox" required>
+          <span>I agree to be legally bound by this agreement and eSignature.</span>
+        </label>
+
+        <div class="form-field">
+          <label>Sign Here</label>
+          <div class="ra-signature-wrap">
+            <canvas id="raSignatureCanvas" width="560" height="160"></canvas>
+            <button type="button" class="ra-sig-clear" id="raSigClear">Clear</button>
+          </div>
+        </div>
+
+        <div class="ra-error" id="raError" style="display:none;"></div>
+
+        <div class="ra-actions">
+          <button type="button" class="btn btn-outline-navy" id="raCancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-gold" id="raSubmitBtn">Agree &amp; Sign</button>
+        </div>
+      </form>
+
+      <div class="ra-success" id="raSuccess" style="display:none;">
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you — your rental agreement has been recorded.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" width="400" height="140" role="img" aria-label="Sample signature placeholder">
+<rect width="400" height="140" fill="#FFFFFF"/>
+<path d="M34 96c22-46 33-52 41-40 7 11-6 44 4 47 12 4 26-52 38-52 9 0 4 40 13 43 10 3 20-30 30-30 8 0 6 22 14 24 9 2 19-14 30-14 8 0 10 10 18 10 10 0 22-12 34-12"
+ fill="none" stroke="#13293D" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M40 112h300" stroke="#C9973E" stroke-width="1.4" opacity=".55"/>
+<text x="200" y="132" font-family="-apple-system,Segoe UI,sans-serif" font-size="10.5" fill="#8A94A0" text-anchor="middle">Sample signature · demo data</text>
+</svg>
