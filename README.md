@@ -143,3 +143,13 @@ swap them in the HTML if you'd rather they weren't.
 
 When editing `demo-db.js`, keep the `*_offset` fields as numbers: negative is
 in the past, positive is in the future, `0` is today.
+
+
+## Portfolio Author
+
+**Moiz Ahmad**
+
+- Email: moizahmad418@gmail.com
+- LinkedIn: https://www.linkedin.com/in/moizahmad418
+
+-----
